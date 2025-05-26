@@ -8,12 +8,12 @@ import com.example.umc_8th_team_aos_fe.databinding.ItemMovieReviewBinding
 
 class MovieReviewAdapter (
     private val context: Context,
-    private val reviews: ArrayList<Review>
+    private val reviews: List<Review>
 ): RecyclerView.Adapter<MovieReviewAdapter.ViewHolder>() {
     inner class ViewHolder(private val binding: ItemMovieReviewBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(item: Review) {
-            binding.movieReviewScore.text = item.reviewScore.toString()
-            binding.movieReviewTV.text = item.reviewText
+            binding.movieReviewScore.text = item.rating.toString()
+            binding.movieReviewTV.text = item.content
         }
     }
 

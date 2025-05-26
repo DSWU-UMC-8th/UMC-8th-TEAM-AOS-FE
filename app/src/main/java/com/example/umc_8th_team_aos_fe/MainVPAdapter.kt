@@ -5,21 +5,22 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.umc_8th_team_aos_fe.databinding.ItemMovieBinding
 
 class MainVPAdapter (
     private val context: Context,
-    private val movies: ArrayList<Movie>
+    private val movies: List<Movie>
 ): RecyclerView.Adapter<MainVPAdapter.ViewHolder>() {
     inner class ViewHolder(private val binding: ItemMovieBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(item: Movie) {
-            binding.itemMovieTV.text = item.movieTitle
-            binding.itemMovieIV.setImageResource(item.moviePoster)
+            binding.itemMovieTV.text = item.title
+            //binding.itemMovieIV.setImageResource(item.posterUrl)
+            Glide.with(context).load(item.posterUrl).placeholder(R.drawable.poster_sample).into(binding.itemMovieIV)
 
             binding.root.setOnClickListener{
                 val intent = Intent(context, MovieActivity::class.java).apply {
-                    putExtra("movieTitle", item.movieTitle)
-                    putExtra("moviePoster", item.moviePoster)
+                    putExtra("movieId", item.movieId)
                 }
                 context.startActivity(intent)
             }
