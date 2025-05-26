@@ -8,6 +8,7 @@
     android:background="@color/lightPurple"
     tools:context=".EditActivity">
 
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="409dp"
@@ -19,11 +20,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/hambtnimg" />
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/hambtnimg" />
+
+        <TextView
+            android:id="@+id/editTitleTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/galmuri7"
+            android:text="리뷰 작성"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="172dp"
+            tools:layout_editor_absoluteY="38dp" />
 
     </androidx.appcompat.widget.Toolbar>
 
@@ -62,6 +75,7 @@
         android:layout_height="36dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="12dp"
+        android:fontFamily="@font/galmuri7"
         android:text="감상 포인트"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -100,10 +114,10 @@
         android:layout_width="357dp"
         android:layout_height="237dp"
         android:layout_marginTop="16dp"
+        android:background="@color/lime"
         android:ems="10"
         android:inputType="text"
         android:text="Name"
-        android:background="@color/lime"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />

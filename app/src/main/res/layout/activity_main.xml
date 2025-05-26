@@ -26,42 +26,69 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/mainTitleIV"
+            android:layout_width="170dp"
+            android:layout_height="39dp"
+            android:layout_marginStart="18dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/logo" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:id="@+id/recommendedTV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/inter"
+        android:paddingStart="15dp"
+        android:paddingTop="25dp"
         android:text="오늘의 추천 영화"
-        android:textSize="20sp" />
+        android:textColor="@color/black"
+        android:textSize="21sp"
+        android:textStyle="bold" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recommendedRV"
         android:layout_width="match_parent"
-        android:layout_height="187dp" />
+        android:layout_height="160dp" />
 
     <TextView
         android:id="@+id/releasedTV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="최근 개봉한 영화"
-        android:textSize="20sp" />
+        android:fontFamily="@font/inter"
+        android:paddingStart="15dp"
+        android:paddingTop="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="21sp"
+        android:text="최근 개봉한 영화" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/releasedRV"
         android:layout_width="match_parent"
-        android:layout_height="209dp" />
+        android:layout_height="160dp" />
 
     <TextView
         android:id="@+id/highratedTV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="리뷰가 좋은 영화"
-        android:textSize="20sp" />
+        android:fontFamily="@font/inter"
+        android:paddingStart="15dp"
+        android:paddingTop="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="21sp"
+        android:text="리뷰가 좋은 영화" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/highratedRV"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent" >
+
+    </androidx.recyclerview.widget.RecyclerView>
 
 </LinearLayout>

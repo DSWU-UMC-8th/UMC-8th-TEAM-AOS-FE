@@ -33,6 +33,16 @@
                 app:layout_constraintTop_toTopOf="parent"
                 tools:srcCompat="@drawable/hambtnimg" />
 
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="영화 이름"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:layout_gravity="center"
+                android:fontFamily="@font/galmuri7" />
+
         </androidx.appcompat.widget.Toolbar>
 
         <ImageView
@@ -45,11 +55,15 @@
             app:layout_constraintTop_toBottomOf="@+id/toolbar3" />
 
         <TextView
-            android:id="@+id/movieTitleTV"
+            android:id="@+id/movieToolTitleTV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView"
+            android:paddingStart="20dp"
+            android:paddingTop="20dp"
+            android:text="영화 이름"
+            android:textColor="@color/black"
             android:textSize="24sp"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/moviePosterIV" />
 
@@ -58,7 +72,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/movieTitleTV" />
+            app:layout_constraintTop_toBottomOf="@+id/movieToolTitleTV" />
 
         <TextView
             android:id="@+id/movieScoreTV"

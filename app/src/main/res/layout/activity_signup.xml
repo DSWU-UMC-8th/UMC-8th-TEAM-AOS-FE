@@ -20,10 +20,21 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/imageView6"
+            android:id="@+id/signupHamBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/hambtnimg" />
+
+        <TextView
+            android:id="@+id/signupTitleTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="회원가입"
+            android:layout_gravity="center"
+            android:fontFamily="@font/galmuri7"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+
     </androidx.appcompat.widget.Toolbar>
 
     <TextView
@@ -31,8 +42,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:text="아이디"
+        android:textSize="20dp"
+        android:fontFamily="@font/galmuri7"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar4" />
 
@@ -40,7 +54,7 @@
         android:id="@+id/signupIdET"
         android:layout_width="369dp"
         android:layout_height="69dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="0dp"
         android:background="@drawable/loginet"
         android:ems="10"
         android:hint="아이디"
@@ -65,8 +79,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="5dp"
         android:text="비밀번호"
+        android:textSize="20dp"
+        android:fontFamily="@font/galmuri7"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/signupIdET" />
 
@@ -74,7 +91,7 @@
         android:id="@+id/signupPwET"
         android:layout_width="369dp"
         android:layout_height="69dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="0dp"
         android:background="@drawable/loginet"
         android:ems="10"
         android:hint="비밀번호"
@@ -89,7 +106,7 @@
         android:id="@+id/signupPwET2"
         android:layout_width="369dp"
         android:layout_height="69dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="0dp"
         android:background="@drawable/loginet"
         android:ems="10"
         android:hint="비밀번호 확인"
@@ -104,9 +121,12 @@
         android:id="@+id/signupEmailTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="5dp"
         android:text="이메일"
+        android:textSize="20dp"
+        android:fontFamily="@font/galmuri7"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/signupPwET2" />
 
@@ -115,7 +135,7 @@
         android:layout_width="369dp"
         android:layout_height="69dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="0dp"
         android:background="@drawable/loginet"
         android:ems="10"
         android:hint="이메일"
@@ -129,9 +149,12 @@
         android:id="@+id/signupNickTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="5dp"
         android:text="닉네임"
+        android:textSize="20dp"
+        android:fontFamily="@font/galmuri7"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/signupEmailET" />
 
@@ -139,7 +162,7 @@
         android:id="@+id/signupNickET"
         android:layout_width="369dp"
         android:layout_height="69dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="0dp"
         android:background="@drawable/loginet"
         android:ems="10"
         android:hint="ex) 팝콘먹는 자라"
@@ -150,14 +173,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/signupNickTV" />
 
-    <Button
+    <ImageView
         android:id="@+id/signupBtn"
         android:layout_width="0dp"
         android:layout_height="59dp"
-        android:text="Button"
         android:background="@drawable/shape_rect_btn"
+        android:backgroundTint="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/signupSignupBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/galmuri7"
+        android:text="가입하기"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/signupBtn"
+        app:layout_constraintEnd_toEndOf="@+id/signupBtn"
+        app:layout_constraintStart_toStartOf="@+id/signupBtn"
+        app:layout_constraintTop_toTopOf="@+id/signupBtn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
