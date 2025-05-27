@@ -5,6 +5,7 @@ import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface ApiService {
     @POST("api/login")
@@ -28,4 +29,9 @@ interface ApiService {
     @POST("/api/movie/{movieId}/like")
     suspend fun likeMovie(@Path("movieId") movieId: Int): Response<LikeResponse>
 
+    @GET("/api/check-id")
+    suspend fun checkDuplicateId(@Query("username") username: String): Response<CheckIdResponse>
+
+    @POST("/api/register")
+    suspend fun signup(@Body request: SignupRequest): Response<SignupResponse>
 }
