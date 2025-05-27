@@ -10,6 +10,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
 import com.example.umc_8th_team_aos_fe.databinding.ActivityLoginBinding
 import kotlinx.coroutines.launch
+import kotlin.math.log
 
 class LoginActivity : AppCompatActivity() {
 
@@ -50,7 +51,8 @@ class LoginActivity : AppCompatActivity() {
                     val loginResponse = response.body()!!
                     if (loginResponse.isSuccess == "true") {
                         Toast.makeText(this@LoginActivity, "로그인 성공!", Toast.LENGTH_SHORT).show()
-                        startMainActivity(loginResponse)
+                        saveSPF(loginResponse.result, loginResponse.token)
+                        finish()
 
                     } else {
                         Toast.makeText(this@LoginActivity, loginResponse.message, Toast.LENGTH_SHORT).show()
@@ -76,21 +78,21 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    private fun startMainActivity(loginResponse: LoginResponse) {
-        val user = loginResponse.result
-        val token = loginResponse.token
-
-        saveSPF(user, token)
-
-        val intent = Intent(this@LoginActivity, MainActivity::class.java).apply {
-            putExtra("userId", user.userId)
-            putExtra("username", user.username)
-            putExtra("email", user.email)
-            putExtra("nickname", user.nickname)
-            putExtra("token", token)
-        }
-
-        startActivity(intent)
-        finish()
-    }
+//    private fun startMainActivity(loginResponse: LoginResponse) {
+//        val user = loginResponse.result
+//        val token = loginResponse.token
+//
+//        saveSPF(user, token)
+//
+//        val intent = Intent(this@LoginActivity, MainActivity::class.java).apply {
+//            putExtra("userId", user.userId)
+//            putExtra("username", user.username)
+//            putExtra("email", user.email)
+//            putExtra("nickname", user.nickname)
+//            putExtra("token", token)
+//        }
+//
+//        startActivity(intent)
+//        finish()
+//    }
 }

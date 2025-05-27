@@ -14,32 +14,17 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@drawable/profile_sample" />
 
-    <RatingBar
-        android:id="@+id/movieReviewRatingBar"
-        android:layout_width="236dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="12dp"
-        app:layout_constraintStart_toEndOf="@+id/movieReviewProvfileIV"
-        app:layout_constraintTop_toTopOf="@+id/movieReviewProvfileIV" />
-
-    <TextView
-        android:id="@+id/movieReviewScore"
-        android:layout_width="57dp"
-        android:layout_height="42dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.39"
-        app:layout_constraintStart_toEndOf="@+id/movieReviewRatingBar"
-        app:layout_constraintTop_toTopOf="@+id/movieReviewProvfileIV" />
-
     <TextView
         android:id="@+id/movieReviewTV"
         android:layout_width="371dp"
-        android:layout_height="109dp"
-        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/inter"
         android:text="TextView"
+        android:textColor="@color/black"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@+id/movieReviewProvfileIV"
-        app:layout_constraintTop_toBottomOf="@+id/movieReviewRatingBar" />
+        app:layout_constraintTop_toBottomOf="@+id/movieReviewProvfileIV" />
 
     <Button
         android:id="@+id/movieReviewDirectionBtn"
@@ -58,4 +43,26 @@
         android:text="Button"
         app:layout_constraintStart_toEndOf="@+id/movieReviewDirectionBtn"
         app:layout_constraintTop_toTopOf="@+id/movieReviewDirectionBtn" />
+
+    <ImageView
+        android:id="@+id/movieReviewRatingIV"
+        android:layout_width="180dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/movieReviewProvfileIV"
+        app:layout_constraintStart_toEndOf="@+id/movieReviewAnonyTV"
+        app:layout_constraintTop_toTopOf="@+id/movieReviewProvfileIV"
+        app:srcCompat="@drawable/rating5" />
+
+    <TextView
+        android:id="@+id/movieReviewAnonyTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/galmuri7"
+        android:text="익명"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/movieReviewProvfileIV"
+        app:layout_constraintStart_toEndOf="@+id/movieReviewProvfileIV"
+        app:layout_constraintTop_toTopOf="@+id/movieReviewProvfileIV" />
 </androidx.constraintlayout.widget.ConstraintLayout>

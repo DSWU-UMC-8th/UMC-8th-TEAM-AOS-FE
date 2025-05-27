@@ -36,6 +36,8 @@ class MainActivity : AppCompatActivity() {
         //initHighratedVP()
     }
 
+
+
     private fun setProfile() {
         binding.mainProfileIV.setOnClickListener {
             val intent = Intent(this, MyPageActivity::class.java)

@@ -1,5 +1,6 @@
 package com.example.umc_8th_team_aos_fe
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
@@ -10,7 +11,6 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
-import com.example.umc_8th_team_aos_fe.databinding.ActivityMainBinding
 import com.example.umc_8th_team_aos_fe.databinding.ActivityMovieBinding
 import kotlinx.coroutines.launch
 
@@ -29,6 +29,8 @@ class MovieActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        setProfileClickListener()
 
         if (movieId != -1) {
             fetchMovieDetail()
@@ -56,7 +58,6 @@ class MovieActivity : AppCompatActivity() {
                 }
             }
         }
-
     }
 
     private fun fetchMovieDetail() {
@@ -66,10 +67,11 @@ class MovieActivity : AppCompatActivity() {
                 if (response.isSuccessful) {
                     val detail = response.body()?.reviews?.firstOrNull()
                     detail?.let {
+                        binding.movieToolTitleTV.text = it.moviename
                         binding.movieTitleTV.text = it.moviename
                         binding.movieSumTV.text = it.content
-                        binding.movieCreditsTV.text = "감독: ${it.director}, 출연진: ${it.actor}"
-                        binding.movieScoreTV.text = "평점: ${it.score}"
+                        binding.movieCreditsTV.text = "감독: ${it.director}\n출연진: ${it.actor}"
+                        setRatingBar(it.score.toInt())
 
                         Glide.with(this@MovieActivity)
                             .load(it.movieImage)
@@ -95,6 +97,23 @@ class MovieActivity : AppCompatActivity() {
             } catch (e: Exception) {
                 Log.e("MovieDetail", "리뷰 불러오기 실패", e)
             }
+        }
+    }
+
+    private fun setRatingBar(score: Int) {
+        when (score) {
+            0 -> binding.movieRatingIV.setImageResource(R.drawable.rating0)
+            1 -> binding.movieRatingIV.setImageResource(R.drawable.rating1)
+            2 -> binding.movieRatingIV.setImageResource(R.drawable.rating2)
+            3 -> binding.movieRatingIV.setImageResource(R.drawable.rating3)
+            //4 -> binding.movieRatingIV.setImageResource(R.drawable.)
+            5 -> binding.movieRatingIV.setImageResource(R.drawable.rating5)
+        }
+    }
+
+    private fun setProfileClickListener() {
+        binding.movieToolProfileIV.setOnClickListener {
+            startActivity(Intent(this, MyPageActivity::class.java))
         }
     }
 

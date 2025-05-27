@@ -25,16 +25,15 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
-                android:id="@+id/imageView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:srcCompat="@drawable/hambtnimg" />
+                tools:srcCompat="@drawable/logo_s" />
 
             <TextView
-                android:id="@+id/textView7"
+                android:id="@+id/movieToolTitleTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="영화 이름"
@@ -43,6 +42,18 @@
                 android:layout_gravity="center"
                 android:fontFamily="@font/galmuri7" />
 
+            <ImageView
+                android:id="@+id/movieToolProfileIV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginRight="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@drawable/profile_sample" />
+
+
         </androidx.appcompat.widget.Toolbar>
 
         <ImageView
@@ -50,12 +61,12 @@
             android:layout_width="match_parent"
             android:layout_height="265dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/toolbar3" />
 
         <TextView
-            android:id="@+id/movieToolTitleTV"
+            android:id="@+id/movieTitleTV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingStart="20dp"
@@ -67,40 +78,41 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/moviePosterIV" />
 
-        <RatingBar
-            android:id="@+id/ratingBar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <ImageView
+            android:id="@+id/movieRatingIV"
+            android:layout_width="221dp"
+            android:layout_height="64dp"
+            android:src="@drawable/rating5"
+            android:paddingLeft="20dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/movieToolTitleTV" />
-
-        <TextView
-            android:id="@+id/movieScoreTV"
-            android:layout_width="93dp"
-            android:layout_height="58dp"
-            android:text="TextView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.265"
-            app:layout_constraintStart_toEndOf="@+id/ratingBar"
-            app:layout_constraintTop_toTopOf="@+id/ratingBar" />
+            app:layout_constraintTop_toBottomOf="@+id/movieTitleTV" />
 
         <TextView
             android:id="@+id/movieInfoTV"
             android:layout_width="285dp"
-            android:layout_height="52dp"
-            android:layout_marginTop="12dp"
-            android:text="TextView"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter"
+            android:paddingLeft="20dp"
+            android:text="2023 [15] 2시간 4분"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
+            app:layout_constraintTop_toBottomOf="@+id/movieRatingIV" />
 
         <TextView
             android:id="@+id/movieSumTV"
             android:layout_width="412dp"
             android:layout_height="96dp"
             android:layout_marginTop="4dp"
-            android:text="TextView"
+            android:paddingLeft="20dp"
+            android:paddingTop="5dp"
+            android:paddingRight="20dp"
+            android:text="내용 요약"
+            android:textColor="@color/black"
+            android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -109,7 +121,7 @@
         <View
             android:id="@+id/view"
             android:layout_width="0dp"
-            android:layout_height="110dp"
+            android:layout_height="150dp"
             android:background="@color/darkPurple"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -117,12 +129,15 @@
 
         <TextView
             android:id="@+id/movieCreditsTV"
-            android:layout_width="132dp"
-            android:layout_height="37dp"
-            android:layout_marginTop="4dp"
-            android:text="TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingTop="20dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="20dp"
+            android:text="출연 출연진1 출연진2 &#10;감독 감독1"
+            app:layout_constraintBottom_toTopOf="@+id/view"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.045"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/movieSumTV" />
 
@@ -130,7 +145,10 @@
             android:id="@+id/movieLikeTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingTop="20dp"
             android:text="TextView"
+            android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/view" />
 
@@ -138,98 +156,115 @@
             android:id="@+id/movieDislikeTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:paddingRight="10dp"
             android:text="TextView"
+            android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/movieLikeTV" />
 
         <ProgressBar
             android:id="@+id/progressBar"
-            style="?android:attr/progressBarStyleHorizontal"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
             android:layout_width="406dp"
-            android:layout_height="36dp"
+            android:layout_height="10dp"
+            android:layout_marginTop="3dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:progressDrawable="@drawable/layout_progressbar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/movieLikeTV" />
 
-        <Button
+        <ImageView
             android:id="@+id/movieLikeBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="44dp"
-            android:text="Button"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/movie_like_btn"
+            app:layout_constraintEnd_toStartOf="@+id/movieDislikeBtn"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/progressBar" />
 
-        <Button
+        <ImageView
             android:id="@+id/movieDislikeBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="60dp"
-            android:text="Button"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/movie_dislike_btn"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/movieLikeBtn"
             app:layout_constraintTop_toTopOf="@+id/movieLikeBtn" />
 
-        <TextView
-            android:id="@+id/movieReviewTitleTV"
-            android:layout_width="55dp"
-            android:layout_height="20dp"
-            android:layout_marginStart="16dp"
-            android:text="TextView"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/view"
-            app:layout_constraintVertical_bias="0.101" />
-
         <ImageView
-            android:id="@+id/imageView3"
+            android:id="@+id/movieReviewProfileIV"
             android:layout_width="58dp"
             android:layout_height="58dp"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="40dp"
             android:layout_marginTop="32dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/movieReviewTitleTV"
-            tools:srcCompat="@tools:sample/avatars" />
+            app:layout_constraintTop_toBottomOf="@id/view"
+            tools:srcCompat="@drawable/profile_sample" />
 
         <RatingBar
-            android:id="@+id/ratingBar2"
+            android:id="@+id/movieReviewRB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="36dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.983"
-            app:layout_constraintStart_toEndOf="@+id/imageView3"
-            app:layout_constraintTop_toTopOf="@+id/imageView3" />
+            app:layout_constraintStart_toEndOf="@+id/movieReviewProfileIV"
+            app:layout_constraintTop_toTopOf="@+id/movieReviewProfileIV" />
 
         <EditText
             android:id="@+id/movieInputReviewET"
-            android:layout_width="280dp"
-            android:layout_height="63dp"
-            android:layout_marginStart="16dp"
+            android:layout_width="369dp"
+            android:layout_height="69dp"
             android:layout_marginTop="24dp"
+            android:background="@drawable/loginet"
             android:ems="10"
+            android:hint="리뷰를 작성하세요!"
             android:inputType="text"
-            android:text="Name"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toEndtOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+            app:layout_constraintTop_toBottomOf="@+id/movieReviewProfileIV" />
 
         <ImageView
             android:id="@+id/movieInputReviewBtn"
-            android:layout_width="70dp"
-            android:layout_height="64dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/movieInputReviewET"
+            android:layout_width="110dp"
+            android:layout_height="66dp"
+            app:layout_constraintEnd_toEndOf="@+id/movieInputReviewET"
+            app:layout_constraintBottom_toBottomOf="@+id/movieInputReviewET"
             app:layout_constraintTop_toTopOf="@+id/movieInputReviewET"
-            app:srcCompat="@drawable/hambtnimg" />
+            app:srcCompat="@drawable/review_regist_btn" />
+
+        <TextView
+            android:id="@+id/movieReviewTitleTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="리뷰 124"
+            android:fontFamily="@font/galmuri7"
+            android:textSize="24dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="5dp"
+            android:paddingLeft="40dp"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/movieInputReviewET"/>
 
         <View
             android:id="@+id/view2"
             android:layout_width="0dp"
             android:layout_height="70dp"
-            android:layout_marginTop="22dp"
+            android:layout_marginTop="5dp"
             android:background="@color/darkLime"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/movieInputReviewET" />
+            app:layout_constraintTop_toBottomOf="@+id/movieReviewTitleTV" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/movieReviewRV"
@@ -239,7 +274,8 @@
             android:background="@color/lime"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view2" />
+            app:layout_constraintTop_toBottomOf="@+id/view2"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
