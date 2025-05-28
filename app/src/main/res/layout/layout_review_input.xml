@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="336dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/review_background" />
+
+    <EditText
+        android:id="@+id/reviewLayoutInputET"
+        android:layout_width="match_parent"
+        android:layout_height="267dp"
+        android:background="@null"
+        android:ems="10"
+        android:gravity="top"
+        android:hint="리뷰를 작성해주세요!"
+        android:inputType="text"
+        android:maxLines="15"
+        android:paddingLeft="30dp"
+        android:paddingTop="40dp"
+        android:paddingRight="30dp"
+        android:paddingBottom="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/reviewLayoutNumTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="20dp"
+        android:text="TextView"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reviewLayoutInputET" />
+
+    <ImageView
+        android:id="@+id/reviewLayoutInputBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/review_input_btn"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reviewLayoutInputET" />
+
+    <Switch
+        android:id="@+id/reviewLayoutToggle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:text="스포일러 포함"
+        app:layout_constraintBottom_toBottomOf="@+id/reviewLayoutInputBtn"
+        app:layout_constraintEnd_toStartOf="@+id/reviewLayoutInputBtn"
+        app:layout_constraintTop_toTopOf="@+id/reviewLayoutInputBtn" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

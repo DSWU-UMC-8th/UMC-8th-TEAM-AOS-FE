@@ -12,8 +12,23 @@ class MovieReviewAdapter (
 ): RecyclerView.Adapter<MovieReviewAdapter.ViewHolder>() {
     inner class ViewHolder(private val binding: ItemMovieReviewBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(item: Review) {
-            binding.movieReviewScore.text = item.rating.toString()
+            setRatingBar(binding, item.rating.toInt())
             binding.movieReviewTV.text = item.content
+        }
+    }
+
+    private fun setReviewText(binding: ItemMovieReviewBinding, item: Review) {
+        TODO("서버에서 spoiler 값을 같이 주게 되면 visible 속성 수정")
+    }
+
+    private fun setRatingBar(binding: ItemMovieReviewBinding, score: Int) {
+        when (score) {
+            0 -> binding.movieReviewRatingIV.setImageResource(R.drawable.rating0)
+            1 -> binding.movieReviewRatingIV.setImageResource(R.drawable.rating1)
+            2 -> binding.movieReviewRatingIV.setImageResource(R.drawable.rating2)
+            3 -> binding.movieReviewRatingIV.setImageResource(R.drawable.rating3)
+            4 -> binding.movieReviewRatingIV.setImageResource(R.drawable.rating4)
+            5 -> binding.movieReviewRatingIV.setImageResource(R.drawable.rating5)
         }
     }
 

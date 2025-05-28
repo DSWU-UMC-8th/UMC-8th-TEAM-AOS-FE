@@ -37,6 +37,14 @@ data class Review(
     val created_at: String
 )
 
+data class ReviewRequest(
+    val movie_id: Int,
+    val rating: Int,
+    val content: String,
+    val spoiler: Boolean,
+    val point_ids: List<Int>
+)
+
 data class LikeResponse(
     val isSuccess: Boolean,
     val code: Int,

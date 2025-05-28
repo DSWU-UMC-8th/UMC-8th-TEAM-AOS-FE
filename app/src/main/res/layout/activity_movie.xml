@@ -217,30 +217,29 @@
             app:layout_constraintStart_toEndOf="@+id/movieReviewProfileIV"
             app:layout_constraintTop_toTopOf="@+id/movieReviewProfileIV" />
 
-        <EditText
-            android:id="@+id/movieInputReviewET"
-            android:layout_width="369dp"
-            android:layout_height="69dp"
-            android:layout_marginTop="24dp"
-            android:background="@drawable/loginet"
-            android:ems="10"
-            android:hint="리뷰를 작성하세요!"
-            android:inputType="text"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintEnd_toEndtOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/movieReviewProfileIV" />
+        <FrameLayout
+            android:id="@+id/movieInputReviewFL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/movieReviewProfileIV">
 
-        <ImageView
-            android:id="@+id/movieInputReviewBtn"
-            android:layout_width="110dp"
-            android:layout_height="66dp"
-            app:layout_constraintEnd_toEndOf="@+id/movieInputReviewET"
-            app:layout_constraintBottom_toBottomOf="@+id/movieInputReviewET"
-            app:layout_constraintTop_toTopOf="@+id/movieInputReviewET"
-            app:srcCompat="@drawable/review_regist_btn" />
+            <EditText
+                android:id="@+id/movieInputReviewET"
+                android:layout_width="match_parent"
+                android:layout_height="69dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/loginet"
+                android:ems="10"
+                android:hint="리뷰를 작성하세요!"
+                android:inputType="text"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                app:layout_constrainTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </FrameLayout>
 
         <TextView
             android:id="@+id/movieReviewTitleTV"
@@ -254,7 +253,7 @@
             android:paddingLeft="40dp"
             android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/movieInputReviewET"/>
+            app:layout_constraintTop_toBottomOf="@+id/movieInputReviewFL"/>
 
         <View
             android:id="@+id/view2"
